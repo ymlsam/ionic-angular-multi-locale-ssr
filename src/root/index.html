@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<script>
+const LOCALE_EN  = 'en';
+const LOCALE_ZHS = 'zhs';
+const LOCALE_ZHT = 'zht';
+const LOCALES    = [LOCALE_EN, LOCALE_ZHS, LOCALE_ZHT];
+
+function getBrowserLocale() {
+	for (let i = 0; i < navigator.languages.length; i++) {
+		const lang = navigator.languages[i];
+		const lc   = lang.split('-');
+		if (lang  === 'zh-CN') return LOCALE_ZHS;
+		if (lc[0] === 'zh'   ) return LOCALE_ZHT;
+		if (lc[0] === 'en'   ) return LOCALE_EN;
+	}
+	return LOCALE_EN;
+}
+const key = 'locale';
+let   lc  = localStorage.getItem(key);
+
+if (LOCALES.indexOf(lc) < 0) {
+	lc = getBrowserLocale();
+    localStorage.setItem(key, lc);
+}
+
+window.location.replace(`/${lc}/index.csr.html`);
+</script>
+</head>
+<body>
+<br>
+<br>
+<span>redirecting...</span>
+</body>
+</html>
