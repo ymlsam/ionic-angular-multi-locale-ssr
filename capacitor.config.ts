@@ -3,7 +3,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
 	appId  : 'com.example.app',
-	appName: 'angular-multi-locale-ssr-capacitor',
+	appName: 'ionic-angular-multi-locale-ssr',
 	webDir : 'dist/browser'
 };
 

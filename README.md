@@ -6,8 +6,8 @@
 ## Installation
 ```bash
 # create new project
-ng new angular-multi-locale-ssr-capacitor --style=scss --ssr --server-routing
-cd angular-multi-locale-ssr-capacitor
+ng new ionic-angular-multi-locale-ssr --style=scss --ssr --server-routing
+cd ionic-angular-multi-locale-ssr
 
 # add localize
 ng add --skip-confirmation @angular/localize

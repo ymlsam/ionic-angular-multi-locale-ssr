@@ -16,16 +16,16 @@ describe('AppComponent', () => {
 		expect(app).toBeTruthy();
 	});
 	
-	it(`should have the 'angular-multi-locale-ssr-capacitor' title`, () => {
+	it(`should have the 'ionic-angular-multi-locale-ssr' title`, () => {
 		const fixture = TestBed.createComponent(AppComponent);
 		const app = fixture.componentInstance;
-		expect(app.title).toEqual('angular-multi-locale-ssr-capacitor');
+		expect(app.title).toEqual('ionic-angular-multi-locale-ssr');
 	});
 	
 	it('should render title', () => {
 		const fixture = TestBed.createComponent(AppComponent);
 		fixture.detectChanges();
 		const compiled = fixture.nativeElement as HTMLElement;
-		expect(compiled.querySelector('h1')?.textContent).toContain('angular-multi-locale-ssr-capacitor');
+		expect(compiled.querySelector('h1')?.textContent).toContain('ionic-angular-multi-locale-ssr');
 	});
 });

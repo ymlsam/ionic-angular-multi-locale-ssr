@@ -13,7 +13,7 @@ import { Capacitor }    from '@capacitor/core';
 export class AppComponent {
 	public static readonly KEY = 'locale';
 	
-	public title: string = 'angular-multi-locale-ssr-capacitor';
+	public title: string = 'ionic-angular-multi-locale-ssr';
 	
 	public setLocale(lc: string): void {
 		localStorage.setItem(AppComponent.KEY, lc);

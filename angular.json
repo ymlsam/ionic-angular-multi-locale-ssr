@@ -3,7 +3,7 @@
 	"version"       : 1,
 	"newProjectRoot": "projects",
 	"projects"      : {
-		"angular-multi-locale-ssr-capacitor": {
+		"ionic-angular-multi-locale-ssr": {
 			"projectType": "application",
 			"schematics" : {
 				"@schematics/angular:component": {
@@ -94,10 +94,10 @@
 					"builder"             : "@angular-devkit/build-angular:dev-server",
 					"configurations"      : {
 						"production" : {
-							"buildTarget": "angular-multi-locale-ssr-capacitor:build:production"
+							"buildTarget": "ionic-angular-multi-locale-ssr:build:production"
 						},
 						"development": {
-							"buildTarget": "angular-multi-locale-ssr-capacitor:build:development"
+							"buildTarget": "ionic-angular-multi-locale-ssr:build:development"
 						}
 					},
 					"defaultConfiguration": "development"
