@@ -1,0 +1,12 @@
+{
+	"defaultProject": "ionic-angular-multi-locale-ssr",
+	"projects"      : {
+		"ionic-angular-multi-locale-ssr": {
+			"name"        : "ionic-app",
+			"integrations": {
+				"capacitor": {}
+			},
+			"type"        : "angular-standalone"
+		}
+	}
+}

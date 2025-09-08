@@ -14,7 +14,7 @@ ng add --skip-confirmation @angular/localize
 
 # install capacitor
 ng add @capacitor/angular
-npm i @capacitor/ios @capacitor/android
+npm install @capacitor/ios @capacitor/android
 
 # edit capacitor config
 perl -i -p -e "s/'dist'/'dist\/browser'/g" ./capacitor.config.ts
@@ -37,6 +37,12 @@ npx cap add ios
 
 # initialise Android app
 npx cap add android
+
+# install Ionic CLI
+npm install -g @ionic/cli
+
+# add Ionic to existing project
+ng add @ionic/angular
 ```
 
 ## Web Development
@@ -46,7 +52,7 @@ npx cap add android
 To start a local development server serving one locale, run:
 
 ```bash
-ng serve
+npm start
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
@@ -56,7 +62,7 @@ Once the server is running, open your browser and navigate to `http://localhost:
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
 ```bash
-ng test
+npm test
 ```
 
 ### Building for Production

@@ -30,7 +30,7 @@
 				}
 			},
 			"architect"  : {
-				"build"       : {
+				"build"              : {
 					"builder"             : "@angular-devkit/build-angular:application",
 					"options"             : {
 						"baseHref"           : "/",
@@ -55,7 +55,7 @@
 							}
 						],
 						"styles"             : [
-							"src/styles.scss"
+							"src/style/styles.scss"
 						],
 						"scripts"            : [],
 						"server"             : "src/main.server.ts",
@@ -90,7 +90,7 @@
 					},
 					"defaultConfiguration": "production"
 				},
-				"serve"       : {
+				"serve"              : {
 					"builder"             : "@angular-devkit/build-angular:dev-server",
 					"configurations"      : {
 						"production" : {
@@ -102,10 +102,10 @@
 					},
 					"defaultConfiguration": "development"
 				},
-				"extract-i18n": {
+				"extract-i18n"       : {
 					"builder": "@angular-devkit/build-angular:extract-i18n"
 				},
-				"test"        : {
+				"test"               : {
 					"builder": "@angular-devkit/build-angular:karma",
 					"options": {
 						"polyfills"          : [
@@ -122,12 +122,49 @@
 							}
 						],
 						"styles"             : [
-							"src/styles.scss"
+							"src/style/styles.scss"
 						],
 						"scripts"            : []
 					}
+				},
+				"ionic-cordova-build": {
+					"builder"       : "@ionic/angular-toolkit:cordova-build",
+					"options"       : {
+						"browserTarget": "ionic-angular-multi-locale-ssr:build"
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "ionic-angular-multi-locale-ssr:build:production"
+						}
+					}
+				},
+				"ionic-cordova-serve": {
+					"builder"       : "@ionic/angular-toolkit:cordova-serve",
+					"options"       : {
+						"cordovaBuildTarget": "ionic-angular-multi-locale-ssr:ionic-cordova-build",
+						"devServerTarget"   : "ionic-angular-multi-locale-ssr:serve"
+					},
+					"configurations": {
+						"production": {
+							"cordovaBuildTarget": "ionic-angular-multi-locale-ssr:ionic-cordova-build:production",
+							"devServerTarget"   : "ionic-angular-multi-locale-ssr:serve:production"
+						}
+					}
 				}
 			}
+		}
+	},
+	"cli"           : {
+		"schematicCollections": [
+			"@ionic/angular-toolkit"
+		]
+	},
+	"schematics"    : {
+		"@ionic/angular-toolkit:component": {
+			"styleext": "scss"
+		},
+		"@ionic/angular-toolkit:page"     : {
+			"styleext": "scss"
 		}
 	}
 }
