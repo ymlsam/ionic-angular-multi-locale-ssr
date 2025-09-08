@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+	<ion-toolbar>
+		<ion-title>{{ title }}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+	<ion-header collapse="condense">
+		<ion-toolbar>
+			<ion-title size="large">{{ title }}</ion-title>
+		</ion-toolbar>
+	</ion-header>
+
+	<div class="container">
+		<h2><ng-container i18n="@@title_greeting">_</ng-container> 🎉</h2>
+		<a (click)="setLocale('en')">Eng</a>&ngsp;<a (click)="setLocale('zht')">繁</a>&ngsp;<a (click)="setLocale('zhs')">简</a><br>
+		<br>
+		<ul>
+			<li><a i18n="@@menu_tab2" [routerLink]="['/tab2']">_</a></li>
+			<li><a i18n="@@menu_tab3" [routerLink]="['/tab3']">_</a></li>
+		</ul>
+		<br>
+		@for (line of lines; track line) {
+			<p>{{ line.text }}</p>
+		}
+	</div>
+</ion-content>

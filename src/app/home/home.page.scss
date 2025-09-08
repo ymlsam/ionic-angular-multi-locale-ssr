@@ -1,0 +1,18 @@
+div.container {
+	display : block;
+	padding : 20px;
+}
+
+h1 {
+	font-size      : 3.125rem;
+	font-weight    : 500;
+	line-height    : 100%;
+	letter-spacing : -0.125rem;
+	margin         : 0;
+	font-family    : Helvetica, Arial, sans-serif;
+}
+
+a:hover {
+	text-decoration : underline;
+	cursor          : pointer;
+}

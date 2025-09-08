@@ -17,6 +17,10 @@ html {
 }
 
 body {
-	padding    : var(--ion-safe-area-top, 0) var(--ion-safe-area-right, 0) var(--ion-safe-area-bottom, 0) var(--ion-safe-area-left, 0);
+//	padding    : var(--ion-safe-area-top, 0) var(--ion-safe-area-right, 0) var(--ion-safe-area-bottom, 0) var(--ion-safe-area-left, 0);
 	min-height : 100%;
+}
+
+ion-title {
+	box-sizing : border-box; // fix issue caused by css reset
 }

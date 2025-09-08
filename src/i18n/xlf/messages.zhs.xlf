@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" datatype="plaintext" original="ng2.template">
-    <body>
-      <trans-unit id="title_greeting" datatype="html">
-        <source>_</source><target>恭喜！您的应用程式正在运行。</target>
-      </trans-unit>
-    </body>
-  </file>
+	<file source-language="en-US" datatype="plaintext" original="ng2.template">
+		<body>
+		    <trans-unit id="menu_home" datatype="html"><source>_</source><target>主页</target></trans-unit>
+            <trans-unit id="menu_tab2" datatype="html"><source>_</source><target>分页 2</target></trans-unit>
+            <trans-unit id="menu_tab3" datatype="html"><source>_</source><target>分页 3</target></trans-unit>
+			<trans-unit id="title_greeting" datatype="html"><source>_</source><target>恭喜！您的应用程式正在运行。</target></trans-unit>
+		</body>
+	</file>
 </xliff>
