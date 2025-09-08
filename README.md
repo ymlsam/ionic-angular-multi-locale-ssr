@@ -1,7 +1,9 @@
-# Multi-locale Angular App with SSR (Web Build) & Capacitor (iOS & Android Builds)
+# Multi-locale Ionic Angular App with SSR (Web Build) & Capacitor (iOS & Android Builds)
 
 ## Prerequisite
 - Node.js 20.19.0+
+- Xcode 15.2+
+- [Android Studio Narwhal 3+](https://developer.android.com/studio)
 
 ## Installation
 ```bash
@@ -16,11 +18,11 @@ ng add --skip-confirmation @angular/localize
 ng add @capacitor/angular
 npm install @capacitor/ios @capacitor/android
 
+# install capacitor plugin to support edge-to-edge design in new Android versions
+npm install @capawesome/capacitor-android-edge-to-edge-support
+
 # edit capacitor config
 perl -i -p -e "s/'dist'/'dist\/browser'/g" ./capacitor.config.ts
-
-# build web app & prepare index.html
-npm run build
 
 # install CocoaPods (1.16.2, with Ruby 2.6.10)
 sudo gem install securerandom -v 0.3.2
@@ -32,17 +34,24 @@ sudo gem install concurrent-ruby -v 1.3.4
 sudo gem install cocoapods
 pod --version
 
-# initialise iOS app (depends on CocoaPods)
-npx cap add ios
-
-# initialise Android app
-npx cap add android
-
 # install Ionic CLI
 npm install -g @ionic/cli
 
 # add Ionic to existing project
 ng add @ionic/angular
+
+# build web app & prepare index.html
+npm run build
+
+# initialise iOS app (depends on CocoaPods)
+ionic cap add ios
+
+# initialise Android app
+ionic cap add android
+
+# make sure env vars JAVA_HOME & ANDROID_HOME are available
+echo "export JAVA_HOME=\"/Applications/Android Studio.app/Contents/jbr/Contents/Home\"" >> ~/.zshenv
+echo "export ANDROID_HOME=\"\$HOME/Library/Android/sdk\"" >> ~/.zshenv
 ```
 
 ## Web Development
@@ -85,10 +94,27 @@ npm run serve:ssr
 
 ## iOS & Android Development
 
+### Capacitor Update
+
+```bash
+ionic cap sync
+```
+
 ### Development Build
 
 ```bash
-npm run build
-npx cap sync
-npx cap run ios
+# without live reload (support multi-locale)
+ionic cap run ios
+ionic cap run android
+
+# with live reload (support one locale only, refer to "development" config in "angular.json")
+ionic cap run ios --livereload
+ionic cap run android --livereload --external
+```
+
+### Production Build
+
+```bash
+ionic cap open ios
+ionic cap open android
 ```
